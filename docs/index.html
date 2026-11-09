@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luluba Store — ofertas da Shopee</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,600&family=Poppins:wght@400;500;600&display=swap">
+<meta name="description" content="Ofertas selecionadas da Shopee com desconto, atualizadas automaticamente.">
+<style>
+:root{--bg:#F7EFEA;--card:#fff;--txt:#2B1F22;--sub:#8a7478;--acc:#C2697A;--line:#ead9d1}
+@media(prefers-color-scheme:dark){:root{--bg:#1f1719;--card:#2b2124;--txt:#f7efea;--sub:#c9b3b6;--line:#3a2e31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 Poppins,system-ui,sans-serif}
+header{padding:28px 16px 12px;max-width:1100px;margin:auto}
+h1{margin:0;font-size:30px;letter-spacing:-.02em;font-family:Lora,serif;font-style:italic;font-weight:600}h1 span{color:var(--acc)}
+.sub{color:var(--sub);margin:6px 0 14px}
+.canal{display:inline-block;background:var(--acc);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.filtros button{border:1px solid var(--line);background:var(--card);color:var(--txt);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit}
+.filtros button.on{background:var(--txt);color:var(--bg);border-color:var(--txt)}
+main{max-width:1100px;margin:auto;padding:8px 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;background:#ddd}
+.info{padding:12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.nome{font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.de{color:var(--sub);text-decoration:line-through;font-size:13px}
+.por{font-size:20px;font-weight:700}
+.tag{align-self:flex-start;background:var(--acc);color:#fff;font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px}
+.meta{color:var(--sub);font-size:12px}
+.btn{margin-top:auto;text-align:center;background:var(--acc);color:#fff;text-decoration:none;padding:10px;border-radius:10px;font-weight:600}
+footer{text-align:center;color:var(--sub);font-size:12px;padding:0 16px 30px}
+</style></head><body>
+<header><h1>Luluba Store <span>●</span></h1>
+<p class="sub">Ofertas da Shopee escolhidas a dedo · atualizado em 09/11/2026 às 12:06</p>
+<a class="canal" href="https://t.me/lulubastore" target="_blank" rel="noopener">📢 Entrar no canal de ofertas</a><div class="filtros" id="f"></div></header>
+<main id="g"></main>
+<footer>Como afiliado da Shopee, posso receber comissão pelas compras feitas pelos links, sem custo extra para você. Preços e estoque podem mudar.</footer>
+<script>
+const D=[{"nome": "Kit 6 Peças 3 Conjuntos de Roupa Infantil Menina Verão Feminino", "preco": 49.9, "preco_original": 131.32, "desconto": 62, "imagem": "https://cf.shopee.com.br/file/br-11134207-820lz-mqbx9jyaolc0c9", "nota": 4.8, "vendas": 3019, "link": "https://s.shopee.com.br/9zzAzrydu6", "categoria": "conjunto feminino"}, {"nome": "Conjunto Mercy Feminino Cropped e Calça em Tecido Dunas Moda Casual Chic Confortável Qualidade", "preco": 29.99, "preco_original": 81.05, "desconto": 63, "imagem": "https://cf.shopee.com.br/file/br-11134207-820m4-mqwa84mbhwxw0c", "nota": 4.7, "vendas": 1537, "link": "https://s.shopee.com.br/3B8qrJ2euB", "categoria": "cropped feminino"}, {"nome": "Vestido Midi Feminino com Manga Bufante Tecido Duna com Lastex nas Costas Moda 2026", "preco": 69.0, "preco_original": 191.67, "desconto": 64, "imagem": "https://cf.shopee.com.br/file/br-11134207-820lx-msh7c2tq45qcd3", "nota": 4.9, "vendas": 3103, "link": "https://s.shopee.com.br/2qW0SgmSwb", "categoria": "vestido feminino"}];
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let cat='Todas';
+function render(){
+ const g=document.getElementById('g');
+ const L=D.filter(o=>cat==='Todas'||o.categoria===cat);
+ g.innerHTML=L.length?L.map(o=>`<article class="card"><img loading="lazy" src="${esc(o.imagem)}" alt="">
+ <div class="info">${o.desconto?`<span class="tag">${o.desconto}% OFF</span>`:''}
+ <div class="nome">${esc(o.nome)}</div>
+ ${o.preco_original&&o.preco_original>o.preco?`<div class="de">${brl(o.preco_original)}</div>`:''}
+ <div class="por">${brl(o.preco)}</div>
+ <div class="meta">${o.nota?'⭐ '+o.nota.toFixed(1):''} ${o.vendas?'· '+o.vendas+' vendidos':''}</div>
+ <a class="btn" href="${esc(o.link)}" target="_blank" rel="nofollow sponsored noopener">Ver na Shopee</a></div></article>`).join('')
+ :'<p>Nenhuma oferta ainda — volte em breve!</p>';
+ const cats=['Todas',...new Set(D.map(o=>o.categoria))];
+ document.getElementById('f').innerHTML=cats.length>2?cats.map(c=>`<button class="${c===cat?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join(''):'';
+}
+document.getElementById('f').onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;render()}};
+render();
+</script></body></html>
