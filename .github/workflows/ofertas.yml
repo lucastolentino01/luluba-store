@@ -2,8 +2,9 @@ name: Bot Luluba Store
 
 on:
   schedule:
-    # MODO 11.11: toda hora, no minuto 30
-    - cron: "30 * * * *"
+    # A cada 2h das 8h30 às 22h30 (Brasília), meia hora depois do Tech Barato.
+    - cron: "30 11-23/2 * * *"
+    - cron: "30 1 * * *"
   workflow_dispatch: {}   # botão "Run workflow" para rodar na hora
 
 permissions:
@@ -43,6 +44,10 @@ jobs:
           IG_HANDLE: ${{ vars.IG_HANDLE }}
           THEME: ${{ vars.THEME }}
           SUBID_PREFIX: ${{ vars.SUBID_PREFIX }}
+          REELS_HORA: ${{ vars.REELS_HORA }}
+          REELS_POR_DIA: ${{ vars.REELS_POR_DIA }}
+          REELS_PRODUTOS: ${{ vars.REELS_PRODUTOS }}
+          REELS_PALAVRA: ${{ vars.REELS_PALAVRA }}
         run: python main.py
 
       - name: Salvar histórico, site e imagens dos stories
