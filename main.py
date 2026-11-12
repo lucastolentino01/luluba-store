@@ -223,6 +223,17 @@ def main():
         enfileirar(melhores, cfg("TELEGRAM_CHAT_ID", "@techbarato_ofertas"),
                    cfg("IG_HANDLE", "@techbarato.ofertas"), ig_qtd)
 
+    # Reels: 1 vídeo por dia com as melhores ofertas das últimas horas
+    if (cfg("IG_ACCESS_TOKEN") or args.teste) and not args.previa and cfg("REELS_POR_DIA", "1") != "0":
+        try:
+            import reels_ig
+            reels_ig.limpar_antigos()
+            if reels_ig.hora_de_fazer(int(cfg("REELS_HORA", 19))):
+                reels_ig.enfileirar(vitrine, cfg("TELEGRAM_CHAT_ID", "@techbarato_ofertas"),
+                                    cfg("IG_HANDLE", "@techbarato.ofertas"), int(cfg("REELS_PRODUTOS", 3)))
+        except Exception as e:
+            print(f"[aviso] reel não foi gerado: {e}")
+
     if manual and not args.teste and not args.previa:
         from fila_manual import salvar_fila
         salvar_fila(FILA, falhou + fila_restante)  # tira da fila o que foi postado
