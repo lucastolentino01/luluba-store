@@ -25,6 +25,7 @@ POSTADOS = DATA / "postados.json"     # itemId -> data do post (evita repetir)
 OFERTAS = DATA / "ofertas.json"       # vitrine do site
 WHATS = DATA / "whatsapp_hoje.txt"    # textos prontos p/ colar no WhatsApp
 FILA = DATA / "fila.csv"              # modo manual: produtos que você cadastrou
+FILA_SHEIN = DATA / "fila_shein.csv"  # peças da Shein com o seu link de afiliado
 BRT = timezone(timedelta(hours=-3))
 
 
@@ -175,6 +176,19 @@ def main():
         if o not in escolhidos:
             escolhidos.append(o)
 
+    # Shein (semiautomático): pega as próximas peças da planilha data/fila_shein.csv
+    shein_fila, shein_resto = [], []
+    n_shein = int(cfg("SHEIN_POR_RODADA", 1))
+    if n_shein > 0 and FILA_SHEIN.exists():
+        from fila_manual import ler_fila
+        todas = ler_fila(FILA_SHEIN)
+        shein_fila, shein_resto = todas[:n_shein], todas[n_shein:]
+        for o in shein_fila:
+            o["loja"] = "Shein"
+            o["categoria"] = o.get("categoria") or "Shein"
+        escolhidos = shein_fila + escolhidos[:max(0, por_execucao - len(shein_fila))]
+        print(f"Shein: {len(shein_fila)} da planilha nesta rodada, {len(shein_resto)} esperando.")
+
     print(f"{len(candidatos)} ofertas passaram no filtro; postando {len(escolhidos)}.")
 
     poster = None
@@ -219,7 +233,7 @@ def main():
     if (cfg("IG_ACCESS_TOKEN") or args.teste) and not args.previa and enviados and ig_qtd > 0:
         from stories_ig import enfileirar, limpar_antigos
         limpar_antigos()
-        melhores = sorted(enviados, key=lambda o: (o["desconto"], o["vendas"]), reverse=True)
+        melhores = sorted(enviados, key=lambda o: (o.get("loja") == "Shein", o["desconto"], o["vendas"]), reverse=True)
         enfileirar(melhores, cfg("TELEGRAM_CHAT_ID", "@techbarato_ofertas"),
                    cfg("IG_HANDLE", "@techbarato.ofertas"), ig_qtd)
 
@@ -233,6 +247,11 @@ def main():
                                     cfg("IG_HANDLE", "@techbarato.ofertas"), int(cfg("REELS_PRODUTOS", 3)))
         except Exception as e:
             print(f"[aviso] reel não foi gerado: {e}")
+
+    if shein_fila and not args.teste and not args.previa:
+        from fila_manual import salvar_fila
+        nao_foi = [o for o in shein_fila if o in falhou]
+        salvar_fila(FILA_SHEIN, nao_foi + shein_resto)
 
     if manual and not args.teste and not args.previa:
         from fila_manual import salvar_fila

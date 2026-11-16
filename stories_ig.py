@@ -107,7 +107,7 @@ def desenhar(o, canal="@techbarato_ofertas", arroba="@techbarato.ofertas", foto=
 
     # topo
     f = BOLD(30)
-    selo = T["selo"]
+    selo = "ACHADINHO SHEIN" if o.get("loja") == "Shein" else T["selo"]
     d.rounded_rectangle((90, 220, 90 + d.textlength(selo, font=f) + 48, 288), radius=34 if T["marca"] == "Luluba" else 12, fill=LARANJA)
     d.text((114, 254), selo, font=f, fill=SOBRE, anchor="lm")
     d.text((W - 90, 254), T["marca"], font=MARCA(56 if T["marca"] == "Luluba" else 40), fill=TEXTO if T["marca"] != "Luluba" else (158, 74, 92), anchor="rm")

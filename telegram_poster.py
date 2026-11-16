@@ -14,6 +14,8 @@ def montar_mensagem(oferta: dict) -> str:
     nome = html.escape(oferta["nome"][:120])
     T = tema()
     linhas = [f"{T['emoji']} <b>{nome}</b>", ""]
+    if oferta.get("loja") == "Shein":
+        linhas.insert(0, "🛍️ <b>ACHADINHO SHEIN</b>")
     if oferta.get("desconto"):
         linhas.append(f"🏷️ <b>{oferta['desconto']}% OFF</b>")
     if oferta.get("preco_original") and oferta["preco_original"] > oferta["preco"]:
