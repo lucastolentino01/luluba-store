@@ -9,6 +9,9 @@ BRT = timezone(timedelta(hours=-3))
 
 
 def gerar_site(ofertas: list, destino, titulo: str = "Tech Barato BR", canal_link: str = "") -> None:
+    if tema().get("marca") == "Luluba":
+        from site_luluba import gerar_site_luluba
+        return gerar_site_luluba(ofertas, destino, titulo, canal_link)
     destino.parent.mkdir(parents=True, exist_ok=True)
     dados = json.dumps([{k: o.get(k) for k in
                          ("nome", "preco", "preco_original", "desconto", "imagem", "nota", "vendas", "link", "categoria")}
