@@ -6,6 +6,7 @@ publicar_stories.py, que roda logo depois no GitHub.
 """
 import io
 import json
+import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -163,6 +164,17 @@ def desenhar(o, canal="@techbarato_ofertas", arroba="@techbarato.ofertas", foto=
     d.text((xi + d.textlength(inteiro, font=BLACK(200)) + 4, base - 92), "," + cent, font=BLACK(96), fill=LARANJA, anchor="ls")
 
     # chamada (o story automático não tem adesivo de link)
+    palavra = os.getenv("STORY_PALAVRA", "").strip().upper()
+    if palavra:  # "Responde QUERO que eu te mando o link no direct" (ManyChat responde)
+        cy0 = base + 60
+        d.rounded_rectangle((90, cy0, W - 90, cy0 + 130), radius=40 if T["marca"] == "Luluba" else 20,
+                            fill=(158, 74, 92) if T["marca"] == "Luluba" else LARANJA)
+        d.text((W // 2, cy0 + 50), f"Responde {palavra}", font=BLACK(54), fill=SOBRE, anchor="mm")
+        d.text((W // 2, cy0 + 100), "que eu te mando o link no direct", font=MED(30), fill=SOBRE, anchor="mm")
+        yf = max(H - 262, cy0 + 180)
+        d.text((W // 2, yf), "preço pode mudar a qualquer momento", font=MED(26), fill=CINZA, anchor="mm")
+        d.text((W // 2, yf + 48), arroba, font=BOLD(34), fill=TEXTO, anchor="mm")
+        return img
     cy0 = H - 470
     d.rounded_rectangle((90, cy0, W - 90, cy0 + 170), radius=28, fill=LARANJA)
     d.text((W // 2, cy0 + 58), T["cta"], font=BLACK(54), fill=SOBRE, anchor="mm")
