@@ -49,6 +49,7 @@ jobs:
           REELS_PRODUTOS: ${{ vars.REELS_PRODUTOS }}
           REELS_PALAVRA: ${{ vars.REELS_PALAVRA }}
           SHEIN_POR_RODADA: ${{ vars.SHEIN_POR_RODADA }}
+          STORY_PALAVRA: ${{ vars.STORY_PALAVRA }}
         run: python main.py
 
       - name: Salvar histórico, site e imagens dos stories
