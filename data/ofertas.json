@@ -1,5 +1,37 @@
 [
   {
+    "id": "22494810522",
+    "nome": "Tapete Absorvente Secagem Rápida Antiderrapante de Banheiro/Porta",
+    "preco": 11.99,
+    "preco_original": 99.92,
+    "desconto": 88,
+    "imagem": "https://cf.shopee.com.br/file/br-11134207-81ztc-mjy4ov0jjugz1b",
+    "nota": 4.8,
+    "vendas": 4451,
+    "comissao": 0.03,
+    "loja": "NOVASHOP_BRASIL",
+    "link": "https://s.shopee.com.br/8VAgwKDU23",
+    "produto_url": "https://shopee.com.br/product/1170622375/22494810522",
+    "categoria": "tapete banheiro",
+    "postado_em": "2026-11-21T20:57:56.367137-03:00"
+  },
+  {
+    "id": "58210104632",
+    "nome": "1/2/3/4 Suportes Organizadores De Metal Para Banheiro E Cozinha Rack De Parede Prateleira Porta Shampoo",
+    "preco": 10.58,
+    "preco_original": 96.18,
+    "desconto": 89,
+    "imagem": "https://cf.shopee.com.br/file/br-11134207-820mb-mpf8btxmai2u62",
+    "nota": 4.8,
+    "vendas": 6693,
+    "comissao": 0.03,
+    "loja": "CASA  HOME",
+    "link": "https://s.shopee.com.br/9V3E89s98T",
+    "produto_url": "https://shopee.com.br/product/1739671384/58210104632",
+    "categoria": "organizador banheiro",
+    "postado_em": "2026-11-21T20:57:56.367137-03:00"
+  },
+  {
     "id": "20899598197",
     "nome": "Tênis Infantil Calce Facil Masculino Bevolo Calçados.",
     "preco": 19.9,
@@ -926,37 +958,5 @@
     "produto_url": "https://shopee.com.br/product/1279944913/19599702993",
     "categoria": "biquini",
     "postado_em": "2026-11-15T20:35:50.236767-03:00"
-  },
-  {
-    "id": "22099485684",
-    "nome": "Saia Midi Feminino Evase Gode Couro Fake Moda Evangelica Cintura Alta Moderno",
-    "preco": 40.0,
-    "preco_original": 100.0,
-    "desconto": 60,
-    "imagem": "https://cf.shopee.com.br/file/br-11134207-820lr-mo2y0ex7gah042",
-    "nota": 4.9,
-    "vendas": 1733,
-    "comissao": 0.03,
-    "loja": "ELIZABETH MODAS",
-    "link": "https://s.shopee.com.br/8pnNNKEkco",
-    "produto_url": "https://shopee.com.br/product/1335694734/22099485684",
-    "categoria": "saia midi",
-    "postado_em": "2026-11-15T15:04:33.506669-03:00"
-  },
-  {
-    "id": "58215946864",
-    "nome": "Froog Calça Legging Feminina Roupa de Academia com Bolso +Zero Transparência +Cintura Alta +Elástica+Fitness",
-    "preco": 49.99,
-    "preco_original": 138.86,
-    "desconto": 64,
-    "imagem": "https://cf.shopee.com.br/file/br-11134207-820m7-mt4m2bpslcskae",
-    "nota": 4.9,
-    "vendas": 5522,
-    "comissao": 0.09,
-    "loja": "FROOG 2",
-    "link": "https://s.shopee.com.br/9KjdyEvjKe",
-    "produto_url": "https://shopee.com.br/product/1858087626/58215946864",
-    "categoria": "legging fitness",
-    "postado_em": "2026-11-15T15:04:33.506669-03:00"
   }
 ]
