@@ -1,5 +1,37 @@
 [
   {
+    "id": "58250179553",
+    "nome": "Tábua de Corte Dupla Face 4 em 1 Cru e Cozido Separados, Máquina de Moagem e Afiador de Facas",
+    "preco": 34.98,
+    "preco_original": 139.92,
+    "desconto": 75,
+    "imagem": "https://cf.shopee.com.br/file/sg-11134201-821g1-mggsidcvbzm4e6",
+    "nota": 4.9,
+    "vendas": 1029,
+    "comissao": 0.03,
+    "loja": "VidaBem",
+    "link": "https://s.shopee.com.br/2BGfcD7FKC",
+    "produto_url": "https://shopee.com.br/product/1647418767/58250179553",
+    "categoria": "tabua corte",
+    "postado_em": "2026-11-23T06:20:31.132121-03:00"
+  },
+  {
+    "id": "58219294276",
+    "nome": "Potes Hermético de Vidro 370ml Tampa 4 Travas Retangular Marmitas Fitness Freezer Geladeira Microondas Premium",
+    "preco": 22.9,
+    "preco_original": 99.57,
+    "desconto": 77,
+    "imagem": "https://cf.shopee.com.br/file/br-11134207-820le-mtpvhlpf2tc060",
+    "nota": 4.9,
+    "vendas": 1698,
+    "comissao": 0.03,
+    "loja": "PopLaar",
+    "link": "https://s.shopee.com.br/1BO8QMtalH",
+    "produto_url": "https://shopee.com.br/product/1588589908/58219294276",
+    "categoria": "potes vidro",
+    "postado_em": "2026-11-23T06:20:31.132121-03:00"
+  },
+  {
     "id": "22098763169",
     "nome": "Toalha de Banho Para Bebê 100% algodão Com Capuz Super Macia Absorvente Para Recém-nascidos CriançasManta Para Banho",
     "preco": 25.9,
@@ -925,38 +957,6 @@
     "link": "https://s.shopee.com.br/Lor4PrpCq",
     "produto_url": "https://shopee.com.br/product/1458716653/23994866149",
     "categoria": "cropped feminino",
-    "postado_em": "2026-11-16T18:25:49.213679-03:00"
-  },
-  {
-    "id": "44667747739",
-    "nome": "Strobo Pisca Pisca Cordão Natal 500 Leds 50m Prova D'Água Bivolt  100 Flash  Decoração Enfeite Natal LuvinCo",
-    "preco": 159.99,
-    "preco_original": 695.61,
-    "desconto": 77,
-    "imagem": "https://cf.shopee.com.br/file/br-11134207-820lg-mu2deg1ohybl3b",
-    "nota": 5.0,
-    "vendas": 3539,
-    "comissao": 0.1,
-    "loja": "LuvinCo",
-    "link": "https://s.shopee.com.br/1C0fnfkya",
-    "produto_url": "https://shopee.com.br/product/1495626487/44667747739",
-    "categoria": "pisca pisca",
-    "postado_em": "2026-11-16T18:25:49.213679-03:00"
-  },
-  {
-    "id": "20599569632",
-    "nome": "Luminária Solar Parede 108 COB Carregar LED Luz Branco frio Prova D'Água Sensor Presença 3 funções",
-    "preco": 24.69,
-    "preco_original": 112.23,
-    "desconto": 78,
-    "imagem": "https://cf.shopee.com.br/file/sg-11134201-7rcc9-m68rilu77v4oc4",
-    "nota": 4.7,
-    "vendas": 1436,
-    "comissao": 0.09,
-    "loja": "ZSZ_brasil",
-    "link": "https://s.shopee.com.br/3g5J2X9r6D",
-    "produto_url": "https://shopee.com.br/product/390307022/20599569632",
-    "categoria": "luminaria",
     "postado_em": "2026-11-16T18:25:49.213679-03:00"
   }
 ]
